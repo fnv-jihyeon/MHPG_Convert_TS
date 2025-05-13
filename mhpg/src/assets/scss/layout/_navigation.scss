@@ -1,0 +1,70 @@
+@use "../abstract/mixins";
+@use "../abstract/variable";
+
+nav {
+  min-width: 24rem;
+  height: calc(100vh - 7.6rem);
+  padding: variable.$padding_xl variable.$padding_m;
+  background: variable.$bg_1;
+  z-index: 3000;
+  ul {
+    li {
+      margin-bottom: 0.8rem;
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+      button {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 4rem;
+        background: variable.$bg_1;
+        @include mixins.button_3;
+        transition: all 0.2s ease-in-out;
+        &:hover {
+          background: variable.$bg_2;
+        }
+        & + dl {
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.3s ease-in-out;
+        }
+        &.first_depth {
+          padding: 0 0.8rem;
+        }
+        &.second_depth {
+          padding: 0 2.4rem;
+        }
+        .nav_arrow {
+          transform: rotate(0);
+          transition: all 0.3s ease-in-out;
+        }
+        &.select {
+          background: variable.$primary_a20;
+          color: variable.$primary;
+          border-radius: variable.$radius_xs;
+          .nav_arrow {
+            transform: rotate(180deg);
+          }
+          &.hasDepth {
+            background: variable.$bg_2;
+            & + dl {
+              max-height: 120rem;
+            }
+          }
+        }
+      }
+      dl {
+        dt {
+          button {
+            margin-bottom: 0.4rem;
+            &:first-of-type {
+              margin-top: 0.4rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

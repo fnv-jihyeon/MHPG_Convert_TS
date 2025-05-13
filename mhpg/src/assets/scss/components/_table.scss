@@ -1,0 +1,366 @@
+@use "../abstract/mixins";
+@use "../abstract/variable";
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  position: relative;
+  &.equalAlign {
+    tr {
+      th {
+        min-width: 10rem;
+      }
+    }
+  }
+  tr {
+    &.subtotal {
+      background: variable.$warning;
+      &:hover {
+        background: variable.$warning !important;
+      }
+    }
+    td {
+      &.left {
+        text-align: left !important;
+      }
+      &.right {
+        text-align: right !important;
+      }
+      &.center {
+        text-align: center;
+      }
+      .border_input {
+        display: flex;
+        align-items: center;
+        input[type=number] {
+          height: 3.2rem;
+          border: 1px solid variable.$divider_2;
+          border-radius: 0.2rem;
+          padding: 0.8rem;
+          &.center {
+            text-align: center;
+          }
+          &.right {
+            text-align: right;
+          }
+        }
+        input[type=text] {
+          text-align: left;
+          height: 3.2rem;
+          border: 1px solid variable.$divider_2;
+          border-radius: 0.2rem;
+          padding: 0.8rem;
+          &.memo {
+            width: 100%;
+            min-width: 20.4rem;
+          }
+          &.center {
+            text-align: center;
+          }
+          &.right {
+            text-align: right;
+          }
+        }
+        input[type=number], input[type=text], select {
+          transition: all 0.3s;
+          &::placeholder {
+            color: variable.$text_3;
+          }
+          &:hover {
+            border: 1px solid variable.$primary_a30;
+          }
+          &:active, &:focus {
+            border: 1px solid variable.$primary;
+          }
+        }
+        div {
+          padding: 0 0.8rem;
+        }
+      }
+    }
+  }
+  .input_group {
+    .checkbox {
+      justify-content: center;
+      .icon {
+        margin: 0 !important;
+      }
+    }
+  }
+  .flex {
+    display: flex;
+    align-items: center;
+    &.center {
+      justify-content: center;
+    }
+    &.wrap {
+      flex-wrap: wrap;
+    }
+  }
+  .radio_td {
+    .input_group {
+      margin: 0.6rem 1.6rem 0.6rem 0;
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+  }
+  .radio_btn_td {
+    .input_group {
+      margin-right: 0.8rem;
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+  }
+  &[data-table-type="horizontal"] {
+    caption {
+      display: none;
+    }
+    th, td {
+      border-right: 1px solid variable.$divider_3;
+      border-bottom: 1px solid variable.$divider_3;
+      height: 4rem;
+      vertical-align: middle;
+      white-space: nowrap;
+      text-align: left;
+      border-collapse: collapse;
+      p {
+        @include mixins.caption_s;
+      }
+      &.empty {
+        display: none;
+      }
+    }
+    tbody {
+      tr {
+        &:first-of-type {
+          & + th {
+            border-radius: variable.$radius_xs 0 0 0;
+          }
+        }
+        th {
+          min-width: 16rem;
+          padding: 0 0.8rem;
+          background: variable.$bg_3;
+          text-align: center;
+          @include mixins.label_s;
+          &.summary_case {
+            vertical-align: middle;
+          }
+          span {
+            &.summary {
+              @include mixins.caption_s;
+              margin-left: 0.4rem;
+            }
+          }
+        }
+        td {
+          @include mixins.body_2;
+          border-left: 1px solid transparent;
+          position: relative;
+          &.padding {
+            padding: 0 2.4rem;
+          }
+          &.object_center {
+            button {
+              margin: 0 auto;
+            }
+          }
+          &.datepicker {
+            padding: 0 2.4rem;
+            .input_group {
+              label {
+                display: none;
+              }
+              .dp__main {
+                .dp__input_wrap {
+                  .dp__pointer {
+                    padding: 0.8rem 0 0.8rem 3.2rem;
+                    border: unset;
+                  }
+                  .dp__input_icon {
+                    left: 0;
+                  }
+                }
+              }
+            }
+          }
+          &.float_btn {
+            button {
+              &.float {
+                position: absolute;
+                right: 1.6rem;
+              }
+            }
+          }
+          .border_input {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            &.range {
+              input {
+                width: 10rem;
+                height: 3.2rem;
+                border: 1px solid variable.$divider_2;
+                border-radius: 0.2rem;
+                padding: 0.8rem;
+              }
+            }
+            &.percentage {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              input {
+                width: 7.2rem;
+                margin-right: 0.4rem;
+                border: 1px solid variable.$divider_2;
+              }
+            }
+            div {
+              padding: 0 0.8rem;
+            }
+            input[type=text] {
+              height: 3.2rem;
+            }
+            input[type="checkbox"] {
+              & + .icon {
+                margin-right: 0.4rem !important;
+              }
+            }
+            input[type=text], input[type=number], select {
+              border: 1px solid variable.$divider_2;
+            }
+          }
+          &:last-of-type {
+            border-right: none;
+          }
+          &.datepicker {
+            min-width: 28rem;
+            width: calc(50% - 24rem);
+          }
+          &.read_only {
+            padding: 0 2.4rem;
+          }
+          .td_wrap {
+            padding: 0.8rem 2.4rem;
+          }
+          input[type=text] {
+            min-width: 14rem;
+            width: 100%;
+            height: 4rem;
+            padding: 0 2.4rem;
+          }
+          select {
+            width: 100%;
+            min-width: 18rem;
+            height: 4rem;
+            padding: 0 2.4rem;
+            border: unset;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-image: url(variable.$icon-path + 'icon_24_select_arrow.svg');
+            background-repeat: no-repeat;
+            background-position: right 24px center;
+            background-size: 24px;
+          }
+          input[type=text], input[type=number], select {
+            border: 1px solid transparent;
+            transition: all 0.3s ease-in-out;
+            @include mixins.body_2;
+            &::placeholder {
+              color: variable.$text_3;
+            }
+            &:hover {
+              border: 1px solid variable.$primary_a30;
+            }
+            &:active, &:focus {
+              border: 1px solid variable.$primary;
+            }
+          }
+        }
+      }
+    }
+  }
+  &[data-table-type="vertical"] {
+    overflow: scroll;
+    &.detail_page {
+      tbody {
+        tr {
+          transition: all 0.2s;
+          cursor: pointer;
+          &:hover {
+            background: variable.$bg_3;
+          }
+          &.select {
+            background: variable.$bg_5;
+          }
+          &.fixed {
+            background: variable.$bg_2;
+          }
+        }
+      }
+    }
+    caption {
+      display: none;
+    }
+    th, td {
+      border-right: 1px solid variable.$divider_1;
+      border-bottom: 1px solid variable.$divider_1;
+      padding: 0 0.8rem;
+      height: 4rem;
+      vertical-align: middle;
+      white-space: nowrap;
+      text-align: center;
+    }
+    thead {
+      th {
+        @include mixins.label_s;
+        background: variable.$bg_4;
+      }
+    }
+    tbody {
+      td {
+        @include mixins.body_2;
+        button {
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+}
+
+// modal type style
+.modal {
+  &.forModal {
+    .modal_container {
+      .modal_content {
+        table {
+          td, th {
+            .input_group {
+              margin-bottom: 0;
+            }
+          }
+        }
+        &[data-table-type="vertical"] {
+          thead {
+            th {
+
+            }
+          }
+          tbody {
+            td {
+
+            }
+          }
+        }
+        &[data-table-type="horizontal"] {
+          th, td {
+
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,193 @@
+@use "../abstract/mixins";
+@use "../abstract/variable";
+
+.input_group {
+  select, input {
+    font-family: variable.$ff;
+  }
+  input {
+    border-radius: variable.$radius_xxs;
+    border: 1px solid variable.$divider_2;
+    @include mixins.body_2;
+    transition: all 0.3s ease-in-out;
+    padding: 0.8rem;
+    &::placeholder {
+      color: variable.$text_4;
+    }
+    &:focus {
+      border: 1px solid variable.$primary;
+      @include mixins.shadow_1;
+    }
+    &.hasIcon {
+      padding: 0.8rem 0.8rem 0.8rem 3.6rem;
+    }
+    & ~ .icon {
+      &.front, &.back {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      &.front {
+        left: 0.8rem;
+      }
+      &.back {
+        right: 0.8rem;
+        cursor: pointer;
+      }
+    }
+    &.right {
+      text-align: right;
+    }
+  }
+  &.upper {
+    display: flex;
+    flex-direction: column;
+    .label_name {
+      @include mixins.label_s;
+      color: variable.$text_2;
+      margin-bottom: 0.4rem;
+    }
+    input {
+      height: 4rem;
+    }
+  }
+  .checkbox {
+    display: flex;
+    align-items: center;
+    @include mixins.caption_m;
+    input[type="checkbox"] {
+      display: none;
+      & + .icon {
+        margin-right: 0.4rem !important;
+        transition: all 0.2s ease-in-out;
+      }
+      &:checked {
+        & + .icon {
+          transition: all 0.2s ease-in-out;
+          &.checkbox_inactive {
+            background: center / contain no-repeat url(variable.$icon-path + 'icon_20_checkbox_active.svg');
+          }
+        }
+      }
+      &:disabled {
+        & + .icon {
+          transition: all 0.2s ease-in-out;
+          &.checkbox_inactive {
+            background: center / contain no-repeat url(variable.$icon-path + 'icon_20_checkbox_disabled.svg');
+          }
+        }
+      }
+    }
+  }
+  .radio {
+    display: flex;
+    align-items: center;
+    input[type="radio"] {
+      display: none;
+      & + .icon {
+        margin-right: 0.4rem;
+      }
+      &:checked {
+        & + .icon {
+          transition: all 0.2s ease-in-out;
+          &.radio_inactive {
+            background: center / contain no-repeat url(variable.$icon-path + 'icon_20_radio_active.svg');
+          }
+        }
+      }
+      &:disabled {
+        & + .icon {
+          transition: all 0.2s ease-in-out;
+          &.radio_inactive {
+            background: center / contain no-repeat url(variable.$icon-path + 'icon_20_radio_inactive.svg');
+          }
+        }
+        & ~ span {
+          color: variable.$text_4;
+        }
+      }
+      & + .cell {
+        min-width: 5.8rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 0.8rem;
+        height: 2.4rem;
+        @include mixins.caption_s;
+        border-radius: variable.$radius_xxs;
+        transition: all 0.3s;
+        background: variable.$cta_tertiary;
+        color: variable.$text_2;
+        &:hover {
+          background: variable.$cta_tertiary_hover;
+        }
+      }
+      &:checked + .cell {
+        color: variable.$cta_fourth_text;
+        background: variable.$cta_fourth;
+      }
+
+    }
+  }
+  .input_wrapper {
+    position: relative;
+    input {
+      width: 100%;
+      &.password {
+        & ~ .icon {
+          &.eye_close {
+            transition: all 0.3s;
+          }
+        }
+        &.show {
+          & ~ .icon {
+            &.eye_close {
+              background: center / contain no-repeat url(variable.$icon-path + 'icon_24_eye_open.svg');
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.radio_input_case {
+  display: flex;
+  align-items: center;
+}
+
+.toggle_wrap {
+  display: flex;
+  align-items: center;
+  &.space_between {
+    justify-content: space-between;
+  }
+  &.center {
+    justify-content: center;
+  }
+  .toggle_container {
+    width: 3.2rem;
+    height: 2rem;
+    margin-left: 0.8rem;
+    background: variable.$bg_3;
+    border-radius: variable.$radius_full;
+    position: relative;
+    .toggle {
+      width: 1.6rem;
+      height: 1.6rem;
+      border-radius: variable.$radius_full;
+      background: variable.$icon_w;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 2px;
+      transition: all 0.2s ease-in-out;
+    }
+    &.on {
+      background: variable.$primary;
+      .toggle {
+        left: 14px;
+      }
+    }
+  }
+}

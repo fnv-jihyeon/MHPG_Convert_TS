@@ -1,0 +1,43 @@
+@use "../abstract/mixins";
+@use "../abstract/variable";
+
+.pagination {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 1.2rem 0;
+  button {
+    min-width: 3.2rem;
+    height: 3.2rem;
+    border-radius: variable.$radius_xxs;
+    background: variable.$bg_2;
+    padding: 0 0.8rem;
+    @include mixins.body_2;
+    color: variable.$text_2;
+    transition: all 0.2s;
+    margin-right: 0.8rem;
+    &:hover {
+      background: variable.$bg_3;
+    }
+    &:last-of-type {
+      margin-right: 0;
+    }
+    &.prev, &.next {
+      &:active {
+        background: variable.$secondary_2;
+      }
+    }
+  }
+  ul {
+    display: flex;
+    li {
+      margin-right: 0.8rem;
+      button {
+        transition: all 0.3s;
+        &.selected {
+          background: variable.$secondary_2;
+        }
+      }
+    }
+  }
+}

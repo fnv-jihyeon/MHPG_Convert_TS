@@ -1,0 +1,45 @@
+@use "../abstract/mixins";
+@use "../abstract/variable";
+
+.notice {
+  .notice_header {
+    height: 6.4rem;
+    padding: 1.6rem 2.4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h5 {
+      @include mixins.label_m;
+      color: variable.$text_2;
+    }
+    button {
+      display: flex;
+      align-items: center;
+      p {
+        @include mixins.button_3;
+        color: variable.$text_2;
+      }
+    }
+  }
+  .notice_content {
+    width: 100%;
+    padding: 1.2rem;
+    .notice_card {
+      width: 100%;
+      border: 1px solid variable.$divider_1;
+      border-radius: variable.$radius_xs;
+      padding: 1.2rem;
+      margin-bottom: 0.8rem;
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+      h6 {
+        @include mixins.caption_m;
+        margin-bottom: 0.8rem;
+      }
+      p {
+        @include mixins.caption_s;
+      }
+    }
+  }
+}

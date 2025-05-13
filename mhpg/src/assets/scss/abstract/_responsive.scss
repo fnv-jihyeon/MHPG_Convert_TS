@@ -1,0 +1,38 @@
+@use "mixins";
+@use "variable";
+
+@media screen and (min-width: 1680px) {
+  body {
+    .container {
+      .content {
+        main {
+          &.home {
+            .main_wrapper {
+              .main_section {
+                flex-direction: row;
+                article {
+                  .notice {
+                    width: 41.6rem;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  body {
+    .container {
+      header {
+        width: 102.4rem;
+        .header_wrapper {
+          max-width: 128rem;
+        }
+      }
+    }
+  }
+}

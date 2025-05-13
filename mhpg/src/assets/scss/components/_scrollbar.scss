@@ -1,0 +1,43 @@
+@use "../abstract/mixins";
+@use "../abstract/variable";
+
+.scroll_x {
+  overflow-x: auto;
+  border-bottom: 1px solid variable.$divider_1;
+  &::-webkit-scrollbar {
+    height: 22px;
+  }
+  &::-webkit-scrollbar-thumb {
+    height: 12px;
+    background: variable.$bg_4;
+    border-radius: 5rem;
+    border: 8px solid variable.$bg_1;
+  }
+  &::-webkit-scrollbar-track {
+    border-radius: 5rem;
+    background: variable.$bg_1;
+  }
+}
+
+.scroll_y {
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    width: 22px;
+  }
+  &::-webkit-scrollbar-thumb {
+    width: 12px;
+    background: variable.$bg_4;
+    border-radius: 5rem;
+    border: 8px solid variable.$bg_1;
+  }
+  &::-webkit-scrollbar-track {
+    border-radius: 5rem;
+    background: variable.$bg_1;
+  }
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: variable.$secondary_2;
+}
+
+

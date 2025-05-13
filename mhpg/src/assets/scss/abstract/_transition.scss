@@ -1,0 +1,30 @@
+// fade
+.fade-enter-active,
+.fade-leave-active {
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+// toast
+.toast-enter-active,
+.toast-leave-active {
+  transition: transform 0.5s, opacity 0.5s;
+}
+
+.toast-enter,
+.toast-leave-to /* .toast-leave-active in <2.1.8 */ {
+  transform: translateY(4rem);
+  opacity: 0;
+}
+
+.toast-enter-to,
+.toast-leave {
+  transform: translateY(0);
+  opacity: 1;
+}
+

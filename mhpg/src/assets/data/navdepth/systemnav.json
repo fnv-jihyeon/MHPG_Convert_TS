@@ -1,0 +1,23 @@
+[
+  {
+    "name": "공지내역관리",
+    "selectedValue": false,
+    "url": "system/notice",
+    "isShow": true,
+    "secondDepth": []
+  },
+  {
+    "name": "FAQ관리",
+    "selectedValue": false,
+    "url": "system/faq",
+    "isShow": true,
+    "secondDepth": []
+  },
+  {
+    "name": "BO관리",
+    "selectedValue": false,
+    "url": "system/bomg",
+    "isShow": true,
+    "secondDepth": []
+  }
+]

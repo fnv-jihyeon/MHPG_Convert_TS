@@ -1,0 +1,40 @@
+[
+  {
+    "name": "거래내역관리",
+    "selectedValue": false,
+    "isShow": true,
+    "secondDepth": [
+      {
+        "secondName": "통합거래조회",
+        "selectedValue": false,
+        "url": "transaction/total",
+        "isShow": true
+      },
+      {
+        "secondName": "신용/체크카드",
+        "selectedValue": false,
+        "url": "transaction/card",
+        "isShow": true
+      },
+      {
+        "secondName": "에스크로",
+        "selectedValue": false,
+        "url": "transaction/escrowpay",
+        "isShow": true
+      },
+      {
+        "secondName": "분할정산",
+        "selectedValue": false,
+        "url": "transaction/splitpay",
+        "isShow": true
+      }
+    ]
+  },
+  {
+    "name": "현금영수증",
+    "selectedValue": false,
+    "url": "transaction/cashreceipt",
+    "isShow": true,
+    "secondDepth": []
+  }
+]

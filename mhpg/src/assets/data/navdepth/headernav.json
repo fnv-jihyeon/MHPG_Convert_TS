@@ -1,0 +1,22 @@
+[
+  {
+    "name": "거래관리",
+    "selectedValue": false,
+    "url": "transaction/total"
+  },
+  {
+    "name": "정산관리",
+    "selectedValue": false,
+    "url": "settlement/search"
+  },
+  {
+    "name": "계약운용관리",
+    "selectedValue": false,
+    "url": "contract/Entrepreneur"
+  },
+  {
+    "name": "시스템관리",
+    "selectedValue": false,
+    "url": "system/notice"
+  }
+]

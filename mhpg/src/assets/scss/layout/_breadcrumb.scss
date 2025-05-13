@@ -1,0 +1,31 @@
+@use "../abstract/mixins";
+@use "../abstract/variable";
+
+[aria-label="breadCrumb"] {
+  ol {
+    display: flex;
+    align-items: center;
+    padding: 0.8rem 0;
+    li {
+      @include mixins.caption_m;
+      color: variable.$text_3;
+      margin-right: 0.4rem;
+      display: flex;
+      align-items: center;
+      &:first-of-type {
+        @include mixins.label_s;
+        color: variable.$text_2;
+        .icon {
+          margin-right: 0.4rem;
+        }
+      }
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+  }
+  h3 {
+    @include mixins.title_3;
+    padding-bottom: 2.4rem;
+  }
+}

@@ -1,0 +1,161 @@
+@use "../abstract/variable";
+
+* {box-sizing: border-box;}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+input {border: none; background: transparent;}
+th,td {font-weight: unset; padding: 0;}
+table {border-collapse: collapse; border-spacing: 0;}
+button {padding: 0; margin: 0; border: 0; background: transparent; cursor: pointer;}
+li {list-style-type: none;}
+canvas {box-sizing: border-box;}
+a {text-decoration: none; color: unset;}
+
+/* font-family */
+:is(html, body, pre, button, input, textarea) {
+    font-family: variable.$ff;
+}
+input[type="text"] {
+    padding: 0;
+}
+input:focus {
+    outline: none;
+}
+
+body,
+html {
+    font-size: 62.5% !important;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    position: relative;
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+.flex {display: flex;}
+
+.non_cursor {caret-color: transparent;}
+
+/* chrome 아이디, 패스워드 저장시에 input background 변경 막기 */
+/* 배경색과 동일하게 맞추기 */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+	-webkit-text-fill-color: #000;
+    -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+    box-shadow: 0 0 0px 1000px transparent inset;
+    transition: background-color 5000s ease-in-out 0s;
+}
+input:autofill,
+input:autofill:hover,
+input:autofill:focus,
+input:autofill:active {
+	-webkit-text-fill-color: #000;
+    -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+    box-shadow: 0 0 0px 1000px transparent inset;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+input:disabled {
+  background: variable.$bg_3;
+  color: variable.$text_4;
+  -webkit-text-fill-color: variable.$text_2;
+}
+input:focus {
+/* prevent the input like button */
+    -webkit-transform: translateZ(0px);
+    -webkit-transform: translate3d(0,0,0);
+    -webkit-perspective: 1000;
+}
+/* chrome 2023.06.28 업데이트 이후 input focus outline 없애기 */
+input:focus, select:focus, option:focus, textarea:focus, button:focus {
+    outline: none;
+}
+/* form 태그 reset */
+form {
+    margin-block-end: 0;
+}
+/* input focus시에 placeholder 없애기 */
+/* Chrome, Firefox, Opera, Safari 10.1+ */
+input:focus::placeholder{
+    opacity: 0;
+}
+/* Edge */
+input:focus::-ms-input-placeholder{
+    opacity: 0;
+}
+
+iframe {
+  overflow-clip-margin: content-box !important;
+  overflow: clip !important;
+  border-width: 0;
+  border-style: inset;
+  border-color: initial;
+  border-image: initial;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+/* For other browsers */
+summary::marker {
+  display: none;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox  */
+input[type='number'] {
+  -moz-appearance: textfield;
+}

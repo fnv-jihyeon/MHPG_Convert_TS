@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+/* 변수 파일은 항상 하위 scss로 존재할 것 */
+@use '../scss/abstract/variable';
+@use '../scss/abstract/mixins';
+@use '../scss/abstract/transition';
+@use '../scss/abstract/responsive';
+
+/* base */
+@use '../scss/base/font';
+@use '../scss/base/reset';
+@use '../scss/base/image';
+@use '../scss/base/icon';
+
+/* components */
+@use '../scss/components/input';
+@use '../scss/components/button';
+@use '../scss/components/modal';
+@use '../scss/components/calendar';
+@use '../scss/components/table';
+@use '../scss/components/datepicker';
+@use '../scss/components/scrollbar';
+@use '../scss/components/pagination';
+@use '../scss/components/accordion';
+@use '../scss/components/notice';
+@use '../scss/components/tab';
+
+/* layout */
+@use '../scss/layout/header';
+@use '../scss/layout/content';
+@use '../scss/layout/common';
+@use '../scss/layout/navigation';
+@use 'layout/breadcrumb';
+
+/* pages */
+@use '../scss/pages/login';
+
+

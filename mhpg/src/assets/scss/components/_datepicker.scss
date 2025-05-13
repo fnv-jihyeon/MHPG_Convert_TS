@@ -1,0 +1,139 @@
+@use "../abstract/mixins";
+@use "../abstract/variable";
+.dp__outer_menu_wrap.dp--menu-wrapper {
+  .dp__menu  {
+    @include mixins.caption_m;
+    .dp__instance_calendar {
+      .dp__menu_inner {
+        padding: 1.2rem 1.6rem 1.6rem;
+        .dp--header-wrap {
+          margin-bottom: 0.8rem;
+          .dp__month_year_wrap {
+            button {
+              @include mixins.label_l;
+            }
+          }
+        }
+      }
+      .dp--menu--inner-stretched {
+        .dp__btn.dp--year-select {
+          @include mixins.label_l;
+        }
+        .dp__overlay_col {
+          @include mixins.label_s;
+          .dp__overlay_cell_pad {
+            transition: all 0.2s;
+            &.dp__overlay_cell_active {
+              background: rgba(0, 79, 255, 0.05);
+              border-radius: variable.$radius_xs;
+              color: variable.$primary;
+            }
+          }
+        }
+      }
+    }
+    .dp__action_row {
+      padding: 0 1.6rem 1.6rem;
+      .dp__selection_preview {
+        display: none;
+      }
+      .dp__action_buttons {
+        button {
+          margin-right: 0.8rem;
+          &:last-of-type {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+    .dp__cell_inner {
+      &.dp__today {
+        border: 1px solid variable.$primary;
+        border-radius: 5rem;
+      }
+      &.dp__active_date {
+        background: variable.$primary;
+        border-radius: 5rem;
+      }
+    }
+  }
+}
+
+.datepicker {
+  .dp__main {
+    .dp__input_wrap {
+      input {
+        @include mixins.caption_m;
+        color: variable.$text_4;
+      }
+      .dp__input_icon {
+        position: absolute;
+        left: calc(100% - 5.6rem);
+        font-size: 1.6em;
+      }
+      .dp--clear-btn {
+        .dp__input_icons {
+          padding: 0.8rem;
+          width: 1.2rem;
+          height: 1.2rem;
+        }
+      }
+    }
+    .dp__outer_menu_wrap {
+      .dp__menu {
+        @include mixins.caption_m;
+        .dp__menu_inner {
+          padding: 1.2rem 1.6rem 1.6rem;
+          .dp--header-wrap {
+            margin-bottom: 0.8rem;
+            .dp__month_year_wrap {
+              button {
+                @include mixins.label_l;
+              }
+            }
+          }
+        }
+        .dp__action_row {
+          padding: 0 1.6rem 1.6rem;
+          .dp__selection_preview {
+            display: none;
+          }
+          .dp__action_buttons {
+            button {
+              margin-right: 0.8rem;
+              &:last-of-type {
+                margin-right: 0;
+              }
+            }
+          }
+        }
+        .dp__cell_inner {
+          &.dp__today {
+            border: 1px solid variable.$primary;
+            border-radius: 5rem;
+          }
+          &.dp__active_date {
+            background: variable.$primary;
+            border-radius: 5rem;
+          }
+        }
+      }
+    }
+  }
+  &.period {
+    .dp__input_wrap {
+      .dp__pointer {
+        border: unset;
+        @include mixins.body_2;
+        padding: 0.8rem 0 0.8rem 3.2rem;
+      }
+      .dp__input_icon {
+        left: 0;
+        right: calc(100% - 5.6rem);
+      }
+    }
+    .dp__range_end, .dp__range_start, .dp__active_date {
+      background: variable.$primary;
+    }
+  }
+}

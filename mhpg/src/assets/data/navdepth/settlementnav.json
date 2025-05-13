@@ -1,0 +1,21 @@
+[
+  {
+    "name": "정산관리",
+    "selectedValue": false,
+    "isShow": true,
+    "secondDepth": [
+      {
+        "secondName": "정산조회",
+        "selectedValue": false,
+        "url": "settlement/search",
+        "isShow": true
+      },
+      {
+        "secondName": "결제대행자료",
+        "selectedValue": false,
+        "url": "settlement/paymentgatewaydoc",
+        "isShow": true
+      }
+    ]
+  }
+]

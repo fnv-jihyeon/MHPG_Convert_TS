@@ -1,0 +1,44 @@
+@use "../abstract/mixins";
+@use "../abstract/variable";
+
+#app {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  .container {
+    @include mixins.caption_m;
+  }
+}
+
+.semi_bold {
+  font-weight: variable.$SemiBold;
+}
+.bold {
+  font-weight: variable.$Bold;
+}
+.has_list_style {
+  li {
+    display: flex;
+    line-height: 130%;
+    &::before {
+      content: '';
+      display: block;
+      width: 4px;
+      height: 4px;
+      border-radius: 5rem;
+      margin: 0.5rem;
+    }
+  }
+}
+
+.anchor {
+  color: variable.$primary !important;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.button_group {
+  &.center {
+    justify-content: center;
+  }
+}

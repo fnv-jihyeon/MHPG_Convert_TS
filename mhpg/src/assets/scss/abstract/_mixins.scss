@@ -1,0 +1,124 @@
+@use "variable";
+
+$font-set: (
+  1rem : 1.2rem,
+  1.1rem : 1.3rem,
+  1.2rem : 1.4rem,
+  1.3rem : 1.6rem,
+  1.4rem : 1.7rem,
+  1.5rem : 1.8rem,
+  1.6rem : 1.9rem,
+  1.7rem : 2rem,
+  1.8rem : 2.1rem,
+  1.9rem : 2.3rem,
+  2rem : 2.4rem,
+);
+
+@mixin font($font-size) {
+  @each $size, $line-height in $font-set {
+    @if ($font-size == $size) {
+      font: #{$size} / #{$line-height} variable.$ff;
+    }
+  }
+}
+
+@mixin title_1 {
+  font-size: variable.$xxl;
+  font-weight: variable.$Bold;
+  line-height: 100%;
+}
+
+@mixin title_2 {
+  font-size: variable.$xl;
+  font-weight: variable.$Bold;
+  line-height: 100%;
+}
+
+@mixin title_3 {
+  font-size: variable.$lg;
+  font-weight: variable.$Bold;
+  line-height: 100%;
+}
+
+@mixin label_l {
+  font-size: variable.$md;
+  font-weight: variable.$Bold;
+  line-height: 100%;
+}
+
+@mixin label_m {
+  font-size: variable.$sm;
+  font-weight: variable.$Bold;
+  line-height: 100%;
+}
+
+@mixin label_s {
+  font-size: variable.$xs;
+  font-weight: variable.$Bold;
+  line-height: 100%;
+}
+
+@mixin body_1 {
+  font-size: variable.$md;
+  font-weight: variable.$Regular;
+  line-height: 100%;
+}
+
+@mixin body_2 {
+  font-size: variable.$xs;
+  font-weight: variable.$Regular;
+  line-height: 100%;
+}
+
+@mixin button_1 {
+  font-size: variable.$md;
+  font-weight: variable.$Bold;
+  line-height: 100%;
+}
+
+@mixin button_2 {
+  font-size: variable.$sm;
+  font-weight: variable.$Bold;
+  line-height: 100%;
+}
+
+@mixin button_3 {
+  font-size: variable.$xs;
+  font-weight: variable.$Bold;
+  line-height: 100%;
+}
+
+@mixin caption_l {
+  font-size: variable.$sm;
+  font-weight: variable.$Regular;
+  line-height: variable.$line_height_l;
+}
+
+@mixin caption_m {
+  font-size: variable.$xs;
+  font-weight: variable.$Regular;
+  line-height: variable.$line_height_m;
+}
+
+@mixin caption_s {
+  font-size: variable.$xxs;
+  font-weight: variable.$Regular;
+  line-height: variable.$line_height_m;
+}
+
+@mixin shadow_1 {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+@mixin shadow_2 {
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.1);
+}
+
+@mixin shadow_3 {
+  box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.1);
+}
+
+@mixin shadow_4 {
+  box-shadow: 0 12px 48px 0 rgba(0, 0, 0, 0.1);
+}
+

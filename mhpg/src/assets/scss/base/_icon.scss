@@ -1,0 +1,32 @@
+@use "../abstract/variable";
+
+.icon {
+  @each $icon16 in small_arrow {
+    &.#{$icon16} {
+      background: center / contain no-repeat url(variable.$icon-path + 'icon_16_#{$icon16}.svg');
+      min-width: 1.6rem;
+      min-height: 1.6rem;
+    }
+  }
+  @each $icon20 in checkbox_inactive, radio_inactive, refresh, logout, bread_ex, search_primary, search_white, excel, add_primary, breadcrumb_arrow, confirm, transfer, check, change, delete {
+    &.#{$icon20} {
+      background: center / contain no-repeat url(variable.$icon-path + 'icon_20_#{$icon20}.svg');
+      min-width: 2rem;
+      min-height: 2rem;
+    }
+  }
+  @each $icon24 in nav_arrow, eye_close, modal_cancel, user, password {
+    &.#{$icon24} {
+      background: center / contain no-repeat url(variable.$icon-path + 'icon_24_#{$icon24}.svg');
+      min-width: 2.4rem;
+      min-height: 2.4rem;
+    }
+  }
+  @each $icon32 in accordion_arrow {
+    &.#{$icon32} {
+      background: center / contain no-repeat url(variable.$icon-path + 'icon_32_#{$icon32}.svg');
+      min-width: 3.2rem;
+      min-height: 3.2rem;
+    }
+  }
+}

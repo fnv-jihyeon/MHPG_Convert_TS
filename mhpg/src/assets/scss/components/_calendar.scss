@@ -1,0 +1,255 @@
+@use "../abstract/mixins";
+@use "../abstract/variable";
+
+.calendar {
+  width: 120rem;
+  background: variable.$bg_1;
+  border-radius: variable.$radius_xs;
+  padding: 1.2rem;
+  position: relative;
+  .color_case {
+    display: flex;
+    position: absolute;
+    top: 3.6rem;
+    right: 15rem;
+    span {
+      display: flex;
+      align-items: center;
+      @include mixins.label_s;
+      margin-right: 2.4rem;
+      &:last-of-type {
+        margin-right: 0;
+      }
+      &::before {
+        content: '';
+        display: block;
+        width: 1.2rem;
+        height: 1.2rem;
+        margin-right: 0.4rem;
+        border-radius: 5rem;
+      }
+      &:nth-of-type(1) {
+        &::before {
+          background: variable.$primary;
+        }
+      }
+      &:nth-of-type(2) {
+        &::before {
+          background: variable.$success;
+        }
+      }
+      &:nth-of-type(3) {
+        &::before {
+          background: variable.$info;
+        }
+      }
+    }
+  }
+  .fc {
+    .fc-header-toolbar {
+      margin-bottom: 1.6rem;
+      padding: 0.8rem;
+      border: 1px solid variable.$divider_1;
+      border-radius: variable.$radius_s;
+      .fc-toolbar-chunk {
+        button.fc-holidayButton-button {
+          background: variable.$cta_secondary;
+          border: unset;
+          height: 3.6rem;
+          padding: 0 1.2rem;
+          @include mixins.button_3;
+          color: variable.$cta_secondary_text;
+          display: flex;
+          align-items: center;
+          &::before {
+            content: '';
+            display: block;
+            background: center / contain no-repeat url(variable.$icon-path + 'icon_20_plus.svg');
+            min-width: 2rem;
+            min-height: 2rem;
+            margin-right: 0.4rem;
+          }
+          &:focus {
+            box-shadow: unset;
+          }
+        }
+        &:first-of-type {
+          display: flex;
+          align-items: center;
+        }
+        h2.fc-toolbar-title {
+          @include mixins.title_3;
+        }
+        .fc-today-button {
+          @include mixins.button_3;
+          color: variable.$cta_secondary_text;
+          background: variable.$cta_secondary;
+          border: none;
+          transition: all 0.3s;
+          &:disabled {
+            color: variable.$text_4;
+            background: variable.$cta_disabled;
+            cursor: not-allowed;
+          }
+        }
+        .fc-button-group {
+          button {
+            width: 4.4rem;
+            height: 4.4rem;
+            border-radius: 0.8rem;
+            background: variable.$cta_tertiary;
+            border: 1px solid variable.$cta_tertiary_stroke;
+            &.fc-prev-button, &.fc-next-button {
+              &:focus {
+                box-shadow: unset;
+              }
+            }
+            &.fc-prev-button {
+              margin-right: 0.8rem;
+              .fc-icon-chevron-left {
+                &::before {
+                  content: '';
+                  display: block;
+                  background: center / contain no-repeat url(variable.$icon-path + 'icon_20_calendar_prev_arrow.svg');
+                  min-width: 2rem;
+                  min-height: 2rem;
+                }
+              }
+            }
+            &.fc-next-button {
+              .fc-icon-chevron-right {
+                &::before {
+                  content: '';
+                  display: block;
+                  background: center / contain no-repeat url(variable.$icon-path + 'icon_20_calendar_next_arrow.svg');
+                  min-width: 2rem;
+                  min-height: 2rem;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .fc-view-harness {
+      height: 84rem !important;
+      table[role="grid"] {
+        border-spacing: 6px;
+        border: unset;
+        th, td {
+          border: unset;
+        }
+        thead[role="rowgroup"] {
+          th {
+            .fc-col-header-cell.fc-day {
+              height: 4rem;
+              @include mixins.caption_l;
+              line-height: 4rem;
+              &.fc-day-sun {
+                a {
+                  color: variable.$error;
+                }
+              }
+              &.fc-day-sat {
+                a {
+                  color: variable.$cta_hover;
+                }
+              }
+            }
+            .fc-col-header-cell-cushion {
+              padding: 0;
+              @include mixins.caption_l
+            }
+            thead[role="presentation"] {
+              th {
+                padding-right: 0.8rem;
+                &:last-of-type {
+                  padding-right: 0;
+                }
+                .fc-scrollgrid-sync-inner {
+                  background: variable.$bg_3;
+                  border-radius: variable.$radius_xxs;
+                }
+              }
+            }
+          }
+        }
+        tbody[role="rowgroup"] {
+          table[role="presentation"] {
+            height: fit-content !important;
+            tbody[role="presentation"] {
+              tr[role="row"] {
+                &:last-of-type {
+                  td {
+                    &.fc-day {
+                      padding: 0 8px 0 0;
+                    }
+                  }
+                }
+                td {
+                  &.fc-day {
+                    padding: 0 8px 8px 0;
+                    &:nth-of-type(7) {
+                      padding-right: 0;
+                      color: variable.$cta_hover;
+                    }
+                    &:nth-of-type(1) {
+                      color: variable.$error;
+                    }
+                    .fc-daygrid-day-frame {
+                      background: variable.$bg_2;
+                      border-radius: variable.$radius_xxs;
+                      padding: 1.2rem;
+                      height: 12rem;
+                      min-height: unset;
+                      .fc-daygrid-day-top {
+                        flex-direction: unset;
+                      }
+                      .fc-daygrid-day-events {
+                        margin-top: 2.6rem;
+                        .fc-daygrid-event-harness {
+                          &:first-of-type {
+                            .fc-event-main {
+                              color: variable.$cta_hover;
+                            }
+                          }
+                          &:nth-of-type(2) {
+                            .fc-event-main {
+                              color: variable.$success;
+                            }
+                          }
+                          .fc-h-event {
+                            background: unset;
+                            border: unset;
+                            text-align: right;
+                            .fc-event-main {
+                              @include mixins.caption_m;
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                  &.fc-day-today {
+                    background: none;
+                    .fc-daygrid-day-number {
+                      width: 4rem;
+                      height: 4rem;
+                      text-align: center;
+                      line-height: 4rem;
+                      background: variable.$primary;
+                      color: variable.$text_1_w;
+                      border-radius: variable.$radius_full;
+                      padding: 0;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+      }
+    }
+  }
+}

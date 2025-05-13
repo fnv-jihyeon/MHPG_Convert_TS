@@ -1,0 +1,280 @@
+/* 변수 및 공통 SCSS 정의 */
+$font-path: '@/assets/font/woff/';
+$img-path: '@/assets/images/';
+$icon-path: '@/assets/icons/';
+
+/* color (S) */
+// blue
+$blue_900: #0014c4;
+$blue_800: #002ad6;
+$blue_700: #0035e2;
+$blue_600: #0040f1;
+$blue_500: #004fff;
+$blue_400: #4062ff;
+$blue_300: #667fff;
+$blue_200: #94a3ff;
+$blue_100: #c0c5ff;
+$blue_50: #e6e8ff;
+
+// red
+$red_900: #ae1a1a;
+$red_800: #be2324;
+$red_700: #cd2929;
+$red_600: #e1322e;
+$red_500: #f23a2f;
+$red_400: #ec4946;
+$red_300: #e16868;
+$red_200: #ec8f8f;
+$red_100: #ffc6cc;
+$red_50: #ffe8eb;
+
+// orange
+$orange_900: #d97520;
+$orange_800: #e09c2d;
+$orange_700: #e3b536;
+$orange_600: #e7cd3f;
+$orange_500: #e7df43;
+$orange_400: #eae45a;
+$orange_300: #eeea73;
+$orange_200: #f2f098;
+$orange_100: #f7f6c0;
+$orange_50: #fcfbe5;
+
+// green
+$green_900: #165135;
+$green_800: #196f47;
+$green_700: #1c8152;
+$green_600: #20935f;
+$green_500: #25a36a;
+$green_400: #46b07e;
+$green_300: #65be92;
+$green_200: #90cfb0;
+$green_100: #bae1ce;
+$green_50: #e2f3ea;
+
+// navy
+$navy_900: #0e3767;
+$navy_800: #195086;
+$navy_700: #1f5f99;
+$navy_600: #2870ab;
+$navy_500: #307cb8;
+$navy_400: #458cc0;
+$navy_300: #5f9eca;
+$navy_200: #85b9d9;
+$navy_100: #b0d3e8;
+$navy_50: #dfeef5;
+
+// neutral
+$neutral_1100: #000000;
+$neutral_1000: #17191a;
+$neutral_900: #2f3133;
+$neutral_800: #464a4d;
+$neutral_700: #5e6366;
+$neutral_600: #757b80;
+$neutral_500: #8c9499;
+$neutral_400: #a4adb2;
+$neutral_300: #bbc5cc;
+$neutral_250: #CFDBE4;
+$neutral_200: #e8eef2;
+$neutral_100: #f2f8fc;
+$neutral_0: #ffffff;
+
+// alpha
+$neutral_dark_90: rgba(0, 0, 0, 0.9);
+$neutral_dark_80: rgba(0, 0, 0, 0.8);
+$neutral_dark_70: rgba(0, 0, 0, 0.7);
+$neutral_dark_60: rgba(0, 0, 0, 0.6);
+$neutral_dark_50: rgba(0, 0, 0, 0.5);
+$neutral_dark_40: rgba(0, 0, 0, 0.4);
+$neutral_dark_30: rgba(0, 0, 0, 0.3);
+$neutral_dark_20: rgba(0, 0, 0, 0.2);
+$neutral_dark_10: rgba(0, 0, 0, 0.1);
+
+$neutral_light_90: rgba(255, 255, 255, 0.9);
+$neutral_light_80: rgba(255, 255, 255, 0.8);
+$neutral_light_70: rgba(255, 255, 255, 0.7);
+$neutral_light_60: rgba(255, 255, 255, 0.6);
+$neutral_light_50: rgba(255, 255, 255, 0.5);
+$neutral_light_40: rgba(255, 255, 255, 0.4);
+$neutral_light_30: rgba(255, 255, 255, 0.3);
+$neutral_light_20: rgba(255, 255, 255, 0.2);
+$neutral_light_10: rgba(255, 255, 255, 0.1);
+
+// brand
+$primary: $blue_500;
+$secondary_1: $orange_700;
+$secondary_2: $blue_200;
+$secondary_3: $navy_900;
+
+$primary_a90: rgba(0, 79, 255, 0.9);
+$primary_a80: rgba(0, 79, 255, 0.8);
+$primary_a70: rgba(0, 79, 255, 0.7);
+$primary_a60: rgba(0, 79, 255, 0.6);
+$primary_a50: rgba(0, 79, 255, 0.5);
+$primary_a40: rgba(0, 79, 255, 0.4);
+$primary_a30: rgba(0, 79, 255, 0.3);
+$primary_a20: rgba(0, 79, 255, 0.2);
+$primary_a10: rgba(0, 79, 255, 0.1);
+
+// background color
+$bg_1: $neutral_0;
+$bg_2: $neutral_100;
+$bg_3: $neutral_200;
+$bg_4: $neutral_250;
+$bg_5: #B3CAFF;
+
+// text color
+$text_1: $neutral_1000;
+$text_2: $neutral_800;
+$text_3: $neutral_600;
+$text_4: $neutral_500;
+$text_1_w: $neutral_0;
+$text_2_w: $neutral_200;
+$text_3_w: $neutral_300;
+
+// divider
+$divider_1: $neutral_200;
+$divider_2: $neutral_300;
+$divider_3: #D6DAE1;
+$divider_alpha: $neutral_dark_10;
+$divider_alpha_inverse: $neutral_light_20;
+
+// semantic
+$success: $green_200;
+$warning: #F8F59B;
+$error: $red_500;
+$info: $blue_200;
+
+// icon
+$icon: $neutral_800;
+$icon_color: $primary;
+$icon_disabled: $neutral_400;
+$icon_w: $neutral_0;
+
+// cta
+$cta: $primary;
+$cta_hover: $blue_700;
+$cta_disabled: $neutral_200;
+$cta_secondary: $blue_50;
+$cta_secondary_hover: $blue_100;
+$cta_secondary_text: $blue_700;
+$cta_tertiary: $neutral_200;
+$cta_tertiary_hover: $neutral_300;
+$cta_tertiary_text: $neutral_800;
+$cta_tertiary_stroke: $neutral_200;
+$cta_fourth: $navy_800;
+$cta_fourth_text: $text_1_w;
+$cta_cancel: $red_200;
+$cta_cancel_hover: $red_300;
+$cta_cancel_text: $text_1;
+
+// spacing
+$spacing_1: 0.4rem;
+$spacing_2: 0.8rem;
+$spacing_3: 1.2rem;
+$spacing_4: 1.6rem;
+$spacing_5: 2rem;
+$spacing_6: 2.4rem;
+$spacing_7: 2.8rem;
+$spacing_8: 3.2rem;
+$spacing_9: 3.6rem;
+$spacing_10: 4rem;
+$spacing_11: 4.4rem;
+$spacing_12: 4.8rem;
+$spacing_13: 5.2rem;
+$spacing_14: 5.6rem;
+$spacing_15: 6rem;
+$spacing_16: 6.4rem;
+$spacing_17: 6.8rem;
+$spacing_18: 7.2rem;
+$spacing_19: 7.6rem;
+$spacing_20: 8rem;
+$spacing_30: 12rem;
+$spacing_40: 16rem;
+
+// margin
+$margin_xs: $spacing_1;
+$margin_s: $spacing_2;
+$margin_m: $spacing_4;
+$margin_l: $spacing_6;
+$margin_xl: $spacing_10;
+$margin_xxl: $spacing_20;
+$margin_xxxl: $spacing_40;
+
+// padding
+$padding_xxs: $spacing_1;
+$padding_xs: $spacing_2;
+$padding_s: $spacing_3;
+$padding_m: $spacing_4;
+$padding_l: $spacing_6;
+$padding_xl: $spacing_8;
+$padding_xxl: $spacing_12;
+
+// radius
+$radius_xxs: $spacing_1;
+$radius_xs: $spacing_2;
+$radius_s: $spacing_4;
+$radius_m: $spacing_6;
+$radius_l: $spacing_8;
+$radius_full: 99rem;
+
+// height
+$height_s: $spacing_6;
+$height_m: $spacing_9;
+$height_l: $spacing_12;
+
+// font size
+$xxl: 3.6rem;
+$xl: 2.4rem;
+$lg: 2rem;
+$md: 1.8rem;
+$sm: 1.6rem;
+$xs: 1.4rem;
+$xxs: 1.2rem;
+
+// line height
+$line_height_l: 2.4rem;
+$line_height_m: 2rem;
+$line_height_s: 1.6rem;
+$line_height_xs: 1.2rem;
+
+// letter spacing
+$letter_spacing: 0;
+
+/* font-weight */
+$Thin: 100;
+$ExtraLight: 200;
+$Light: 300;
+$Regular: 400;
+$Medium: 500;
+$SemiBold: 600;
+$Bold: 700;
+$ExtraBold: 800;
+$Black: 900;
+
+$description: #3C9B75;
+// old version (E)
+
+$ff: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+
+@each $num in 0, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40 {
+  $remValue: calc($num / 10);
+  .mt#{$num} {
+    margin-top: #{$remValue}rem !important;
+  }
+  .mb#{$num} {
+    margin-bottom: #{$remValue}rem !important;
+  }
+  .ml#{$num} {
+    margin-left: #{$remValue}rem !important;
+  }
+  .mr#{$num} {
+    margin-right: #{$remValue}rem !important;
+  }
+}
+
+/* drop-shadow */
+$shadow_1: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+$shadow_2: 0 4px 12px 0 rgba(0, 0, 0, 0.1);
+$shadow_3: 0 8px 24px 0 rgba(0, 0, 0, 0.1);
+$shadow_4: 0 12px 48px 0 rgba(0, 0, 0, 0.1);

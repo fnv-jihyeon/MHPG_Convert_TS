@@ -1,0 +1,21 @@
+[
+  {
+    "name": "계약 관리",
+    "selectedValue": false,
+    "isShow": true,
+    "secondDepth": [
+      {
+        "secondName": "가맹점등록",
+        "selectedValue": false,
+        "url": "contract/Entrepreneur",
+        "isShow": true
+      },
+      {
+        "secondName": "계정관리",
+        "selectedValue": false,
+        "url": "contract/accountmanage",
+        "isShow": true
+      }
+    ]
+  }
+]
