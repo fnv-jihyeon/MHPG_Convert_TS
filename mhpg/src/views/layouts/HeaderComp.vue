@@ -30,21 +30,4 @@ function onHeaderMenuClick(index: number) {
   </div>
 </template>
 <style scoped>
-.header-comp nav ul {
-  display: flex;
-  gap: 12px;
-  list-style: none;
-  padding: 0;
-}
-
-.header-comp nav ul li {
-  cursor: pointer;
-  padding: 6px 12px;
-  border-radius: 6px;
-}
-
-.header-comp nav ul li.selected {
-  background-color: #42b983;
-  color: white;
-}
 </style>
